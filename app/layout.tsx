@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "@/components/NavBar";
 import { CartProvider } from "@/context/CartContext";
+import { AuthProvider } from "@/context/AuthContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,10 +25,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
-        <CartProvider>
-          <NavBar />
-          {children}
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <NavBar />
+            {children}
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );

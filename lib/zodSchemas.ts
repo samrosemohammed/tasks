@@ -10,3 +10,9 @@ export const checkOutFromSchema = z.object({
 });
 
 export type CheckOutFormData = z.infer<typeof checkOutFromSchema>;
+
+export const adminLoginSchema = z.object({
+  email: z.string().min(1, "Email is required").email("Invalid email format"),
+  password: z.string().min(3, "Password must be greater than 3 character"),
+});
+export type AdminLoginFormData = z.infer<typeof adminLoginSchema>;
