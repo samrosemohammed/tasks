@@ -34,3 +34,11 @@ export const NavAddToCart = () => {
     </Button>
   );
 };
+
+export const PlaceOrder = ({ isSubmitting }: { isSubmitting?: boolean }) => {
+  return (
+    <Button type="submit" disabled={isSubmitting} className="w-full">
+      Place Order
+    </Button>
+  );
+};
