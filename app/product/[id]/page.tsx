@@ -41,7 +41,7 @@ export default async function Page({ params }: PageProps) {
     return <div>Product not found.</div>;
   }
   return (
-    <div className="container mx-auto max-w-screen-xl py-29">
+    <div className="container mx-auto py-4 px-8">
       <div className="grid lg:grid-cols-2 gap-8">
         <ImageGallery product={product} />
         <ProductDetails product={product} />

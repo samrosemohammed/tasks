@@ -11,6 +11,7 @@ import {
 } from "./ui/card";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { AddToCart } from "./ProductButton";
 
 interface ProductDetailsProps {
   product: any;
@@ -22,7 +23,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const hasHalfStar = product.rating % 1 !== 0;
   return (
     <div className="space-y-4">
-      <Card className="max-w-lg">
+      <Card>
         <CardHeader>
           <div className="mb-2 flex items-center justify-between">
             <Badge variant={"outline"}>{product.category}</Badge>
@@ -92,16 +93,11 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
           </div>
         </CardContent>
         <CardFooter>
-          <Button className="w-full" asChild>
-            <Link href={"/cart"}>
-              <ShoppingCart />
-              Add to Cart
-            </Link>
-          </Button>
+          <AddToCart product={product} />
         </CardFooter>
       </Card>
 
-      <Card className="max-w-lg">
+      <Card>
         <CardHeader>
           <CardTitle className="text-lg">Product Details</CardTitle>
         </CardHeader>
