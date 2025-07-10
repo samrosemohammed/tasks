@@ -38,7 +38,6 @@ export default function CartPage() {
         <h1 className="text-3xl font-bold mb-8">Shopping Cart</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Cart Items */}
           <div className="lg:col-span-2 space-y-4">
             {cart.map((item) => {
               const discountedPrice =
@@ -48,7 +47,6 @@ export default function CartPage() {
                 <Card key={item.id}>
                   <CardContent className="p-6">
                     <div className="flex gap-4">
-                      {/* Image (use fallback if no thumbnail) */}
                       <div className="relative w-24 h-24 rounded-lg overflow-hidden">
                         <img
                           src={item.thumbnail || "/placeholder.svg"}
@@ -71,7 +69,6 @@ export default function CartPage() {
                         </div>
 
                         <div className="flex items-center justify-between mt-4">
-                          {/* Quantity controls */}
                           <div className="flex items-center gap-2">
                             <Button
                               variant="outline"
@@ -121,7 +118,6 @@ export default function CartPage() {
             })}
           </div>
 
-          {/* Order Summary */}
           <div className="lg:col-span-1">
             <Card>
               <CardHeader>

@@ -6,8 +6,8 @@ import { CartProvider } from "@/context/CartContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // Choose the weights you need
-  variable: "--font-poppins", // Optional: CSS variable for flexibility
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
   display: "swap",
 });
 

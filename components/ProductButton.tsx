@@ -1,7 +1,8 @@
 "use client";
 import { useCart } from "@/context/CartContext";
 import { Button } from "./ui/button";
-import { ShoppingCart } from "lucide-react";
+import { ArrowLeft, ShoppingBag, ShoppingCart } from "lucide-react";
+import Link from "next/link";
 
 interface AddToCartProps {
   product: any;
@@ -40,5 +41,24 @@ export const PlaceOrder = ({ isSubmitting }: { isSubmitting?: boolean }) => {
     <Button type="submit" disabled={isSubmitting} className="w-full">
       Place Order
     </Button>
+  );
+};
+
+export const ContinueShopping = () => {
+  return (
+    <div className="w-full flex flex-col gap-4">
+      <Button asChild>
+        <Link href={"/"}>
+          <ShoppingBag />
+          Continue Shopping
+        </Link>
+      </Button>
+      <Button variant={"secondary"} asChild>
+        <Link href={"/checkout"}>
+          <ArrowLeft />
+          Back to Checkout
+        </Link>
+      </Button>
+    </div>
   );
 };
