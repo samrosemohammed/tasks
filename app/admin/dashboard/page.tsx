@@ -1,4 +1,12 @@
+import ProtectedRoute from "@/components/ProtectedRoute";
+import { SummaryStats } from "@/components/SummaryStats";
+
 const Page = () => {
-  return <div>hello from the admin</div>;
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-semibold mb-4">Dashboard</h1>
+      <SummaryStats />
+    </div>
+  );
 };
 export default Page;

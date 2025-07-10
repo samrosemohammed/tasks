@@ -1,18 +1,27 @@
 "use client";
+
 import Link from "next/link";
-import { Button } from "./ui/button";
-import { ShoppingCart } from "lucide-react";
-import { useCart } from "@/context/CartContext";
+import { buttonVariants } from "./ui/button";
 import { NavAddToCart } from "./ProductButton";
 
 export const NavBar = () => {
   return (
-    <nav className="flex items-center justify-between py-2 px-4 shadow-md">
+    <nav className="flex items-center justify-between py-4 px-4 shadow-md">
       <Link href={"/"}>MiniStore</Link>
 
-      <Link href="/cart" className="relative">
-        <NavAddToCart />
-      </Link>
+      <div className="flex items-center justify-center gap-4">
+        <Link href="/cart" className="relative">
+          <NavAddToCart />
+        </Link>
+        <Link
+          className={buttonVariants({
+            variant: "secondary",
+          })}
+          href={"/login"}
+        >
+          Admin
+        </Link>
+      </div>
     </nav>
   );
 };

@@ -13,9 +13,12 @@ import { Label } from "./ui/label";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckOutFormData, checkOutFromSchema } from "@/lib/zodSchemas";
 import { useRouter } from "next/navigation";
+import { useCart } from "@/context/CartContext";
 
 export const CheckOutForm = () => {
   const router = useRouter();
+  const { cart, total, clearCart } = useCart();
+
   const {
     register,
     handleSubmit,
@@ -29,7 +32,18 @@ export const CheckOutForm = () => {
       lastName: "",
     },
   });
-  const onSubmit = () => {
+  const onSubmit = (data: CheckOutFormData) => {
+    const order = {
+      user: data,
+      cart,
+      total,
+      date: new Date().toISOString(),
+    };
+
+    const existingOrders = JSON.parse(localStorage.getItem("orders") || "[]");
+    localStorage.setItem("orders", JSON.stringify([...existingOrders, order]));
+
+    clearCart();
     router.push("/success");
   };
   return (

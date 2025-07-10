@@ -10,6 +10,7 @@ import {
 
 type AuthContextType = {
   isAuthenticated: boolean;
+  loading: boolean;
   login: (email: string, password: string) => boolean;
   logout: () => void;
 };
@@ -18,10 +19,12 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const session = localStorage.getItem("admin-auth");
     setIsAuthenticated(session === "true");
+    setLoading(false);
   }, []);
 
   const login = (email: string, password: string) => {
@@ -39,7 +42,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout, loading }}>
       {children}
     </AuthContext.Provider>
   );

@@ -36,7 +36,7 @@ const Page = () => {
     }
   };
   return (
-    <div className="min-h-[80vh] flex items-center justify-center bg-gray-50 px-4">
+    <div className="min-h-[80vh] flex items-center justify-center px-4">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center">
@@ -54,7 +54,7 @@ const Page = () => {
                 {...register("email")}
                 id="email"
                 type="email"
-                placeholder="Enter your email"
+                placeholder="admin@demo.com"
               />
               {errors?.email && (
                 <p className="text-red-500">{errors?.email.message}</p>
@@ -66,7 +66,7 @@ const Page = () => {
                 {...register("password")}
                 id="password"
                 type="password"
-                placeholder="Enter your password"
+                placeholder="admin123"
               />
             </div>
             {errors?.password && (
