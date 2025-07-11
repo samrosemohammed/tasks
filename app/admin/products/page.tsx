@@ -7,7 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import ProtectedRoute from "@/components/ProtectedRoute";
+import { Product } from "@/types/product";
 
 const getData = async (url: string, options: RequestInit) => {
   try {
@@ -21,7 +21,7 @@ const getData = async (url: string, options: RequestInit) => {
 
 const Page = async () => {
   const data = await getData(url, options);
-  const products = data?.data?.data || [];
+  const products: Product[] = data?.data?.data || [];
 
   return (
     <div className="p-6">
@@ -41,7 +41,7 @@ const Page = async () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {products.map((product: any) => (
+          {products.map((product) => (
             <TableRow key={product.id}>
               <TableCell>{product.id}</TableCell>
               <TableCell>{product.title}</TableCell>

@@ -17,7 +17,7 @@ export const NavBar = () => {
           className={buttonVariants({
             variant: "secondary",
           })}
-          href={"/login"}
+          href={"/admin/dashboard"}
         >
           Admin
         </Link>

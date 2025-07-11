@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/card";
 import { useCart } from "@/context/CartContext";
 import { Minus, Plus, Trash2 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function CartPage() {

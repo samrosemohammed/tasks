@@ -10,7 +10,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { format } from "date-fns";
-import ProtectedRoute from "@/components/ProtectedRoute";
 type Product = {
   id: number;
   title: string;
@@ -56,7 +55,6 @@ const Page = () => {
           <div key={index} className="mb-8 border p-4 rounded-md">
             <h2 className="text-lg font-semibold mb-2">
               Order #{index + 1} — {format(new Date(order.date), "PPPpp")}{" "}
-              {/* e.g., Jul 10, 2025 */}
             </h2>
             <p className="text-sm text-gray-500">
               {order.user.firstName} {order.user.lastName} ({order.user.email})

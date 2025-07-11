@@ -5,6 +5,7 @@ import { ArrowLeft, ShoppingBag, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 
 interface AddToCartProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   product: any;
 }
 export const AddToCart = ({ product }: AddToCartProps) => {

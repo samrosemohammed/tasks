@@ -3,6 +3,7 @@ import { Card, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
+import { Product } from "@/types/product";
 
 const getData = async (url: string, options: RequestInit) => {
   try {
@@ -15,11 +16,11 @@ const getData = async (url: string, options: RequestInit) => {
 };
 export const Products = async () => {
   const data = await getData(url, options);
-  const products = data?.data.data;
+  const products: Product[] = data?.data.data;
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
-      {products.map((product: any) => (
+      {products.map((product) => (
         <Card key={product.id} className="p-4 hover:shadow-md">
           <div className="aspect-square relative overflow-hidden rounded-t-lg">
             <img

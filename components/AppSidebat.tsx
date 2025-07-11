@@ -1,5 +1,5 @@
 "use client";
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+import { Calendar, Home, Inbox } from "lucide-react";
 
 import {
   Sidebar,
@@ -17,7 +17,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 
-// Menu items.
 const items = [
   {
     title: "Dashboard",

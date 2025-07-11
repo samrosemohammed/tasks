@@ -1,4 +1,3 @@
-import ProtectedRoute from "@/components/ProtectedRoute";
 import { SummaryStats } from "@/components/SummaryStats";
 
 const Page = () => {

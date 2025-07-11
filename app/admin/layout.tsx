@@ -1,5 +1,4 @@
 import { AppSidebar } from "@/components/AppSidebat";
-import { NavBar } from "@/components/NavBar";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { ReactNode } from "react";

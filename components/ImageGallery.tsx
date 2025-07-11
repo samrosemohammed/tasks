@@ -1,8 +1,9 @@
 "use client";
+import { Product } from "@/types/product";
 import { useState } from "react";
 
 interface ImageGalleryProps {
-  product: any;
+  product: Product;
 }
 export const ImageGallery = ({ product }: ImageGalleryProps) => {
   const [selectedImage, setSelectedImage] = useState(0);
@@ -19,7 +20,7 @@ export const ImageGallery = ({ product }: ImageGalleryProps) => {
         />
       </div>
       <div className="flex gap-2">
-        {product.images.map((image: any, index: any) => (
+        {product.images.map((image, index) => (
           <button
             key={index}
             onClick={() => setSelectedImage(index)}

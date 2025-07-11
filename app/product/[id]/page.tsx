@@ -1,18 +1,6 @@
 import { ImageGallery } from "@/components/ImageGallery";
 import { ProductDetails } from "@/components/ProductDetails";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { options, urlBasedOnId } from "@/lib/api-url-options";
-import { ShoppingCart, Star } from "lucide-react";
-import Link from "next/link";
 
 const getData = async (id: string, url: string, options: RequestInit) => {
   try {
@@ -32,10 +20,7 @@ export default async function Page({ params }: PageProps) {
   const { id } = await params;
   const data = await getData(id, urlBasedOnId, options);
   const product = data?.data;
-  const discountedPrice =
-    product.price * (1 - product.discountPercentage / 100);
-  const fullStars = Math.floor(product.rating);
-  const hasHalfStar = product.rating % 1 !== 0;
+
   console.log(product);
   if (!product) {
     return <div>Product not found.</div>;

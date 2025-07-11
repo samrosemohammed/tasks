@@ -1,4 +1,4 @@
-import { ShoppingCart, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { Badge } from "./ui/badge";
 
 import {
@@ -9,12 +9,11 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { Button } from "./ui/button";
-import Link from "next/link";
 import { AddToCart } from "./ProductButton";
+import { Product } from "@/types/product";
 
 interface ProductDetailsProps {
-  product: any;
+  product: Product;
 }
 export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const discountedPrice =
