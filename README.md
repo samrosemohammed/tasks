@@ -1,4 +1,4 @@
-# # Mini E-Commerce App – Frontend
+# Mini E-Commerce App – Frontend
 This is a mini e-commerce web application built using **Next.js (App Router)** and **TypeScript**. It includes a customer-facing store and an admin panel to manage and view orders.
 
 ## 🛠️ Tech Stack
